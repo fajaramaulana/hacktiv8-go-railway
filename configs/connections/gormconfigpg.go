@@ -3,6 +3,7 @@ package connections
 import (
 	"fmt"
 	"os"
+	"sesi7/cmd/entities"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -21,6 +22,8 @@ func ConnectionGormPg() (*gorm.DB, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	db.Debug().AutoMigrate(entities.Employee{})
 
 	return db, nil
 }
