@@ -27,5 +27,5 @@ func Init() {
 
 	employeeController.EmployeeRoutes(v1)
 
-	App.Run(os.Getenv("PORT"))
+	App.Run(":" + os.Getenv("PORT"))
 }
