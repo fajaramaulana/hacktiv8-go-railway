@@ -2,6 +2,7 @@ package routes
 
 import (
 	"log"
+	"os"
 	"sesi7/cmd/controllers"
 	"sesi7/cmd/repositories"
 	"sesi7/cmd/services"
@@ -26,5 +27,5 @@ func Init() {
 
 	employeeController.EmployeeRoutes(v1)
 
-	App.Run(":8081")
+	App.Run(os.Getenv("PORT"))
 }
